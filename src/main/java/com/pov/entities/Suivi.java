@@ -17,10 +17,11 @@ public class Suivi {
 	private Double montant;
 	private String compteRendu;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pov_id_suivi")
 	private Pov pov;
-	@ManyToOne(fetch =  FetchType.EAGER)
+	
+	@ManyToOne(fetch =  FetchType.LAZY)
 	@JoinColumn(name = "typeP_id_suivi")
 	private TypePrestation typePrestation;
 	

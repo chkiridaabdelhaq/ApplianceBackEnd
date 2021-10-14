@@ -19,9 +19,15 @@ public class PovDto {
 	private Long id_employe;
 	private boolean statut ;
 	private int nbrSeance;
+	private boolean offerCommercial;
 	
 	
-	
+	public boolean isOfferCommercial() {
+		return offerCommercial;
+	}
+	public void setOfferCommercial(boolean offerCommercial) {
+		this.offerCommercial = offerCommercial;
+	}
 	public int getNbrSeance() {
 		return nbrSeance;
 	}

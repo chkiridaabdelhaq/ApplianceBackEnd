@@ -13,4 +13,5 @@ public interface IPovService {
 	public void deletePov(Long id);
 	public List<PovDto> detailPovAppliance(Long idApplaince);
 	public PovDto getSceancePovEncoure(Long id);
+	
 }

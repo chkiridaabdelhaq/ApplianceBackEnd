@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import com.pov.dtos.ApplianceDto;
 import com.pov.dtos.ClientDto;
@@ -11,6 +12,7 @@ import com.pov.dtos.PovDto;
 import com.pov.entities.Appliance;
 import com.pov.entities.Client;
 import com.pov.entities.Pov;
+import com.pov.entities.Suivi;
 
 @Component
 public class PovMapper {
@@ -47,7 +49,15 @@ public class PovMapper {
 		if(pov.getAppliance() != null){
 			povDto.setId_appliance(pov.getAppliance().getId_appliance());
 			povDto.setLibelleApplliance(pov.getAppliance().getLibelleApplliance());
-		 }
+		}
+		if(!CollectionUtils.isEmpty(pov.getSuivis())) {
+			for(Suivi suivi : pov.getSuivis()) {
+				povDto.setOfferCommercial(suivi.getOfferCommercial());
+				break;
+			}
+		}else {
+			povDto.setOfferCommercial(false);
+		}
 			return povDto ;
 	}
 	public Pov toDomain(Pov pov,PovDto povDto) {

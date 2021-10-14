@@ -8,14 +8,22 @@ public class SuiviDto {
 	private String compteRendu;
 	private Long id_perstation;
 	private String libellePerstation;
+	private String libellePov ;
+
+	private Long id_pov;
 	
+	public String getLibellePov() {
+		return libellePov;
+	}
+	public void setLibellePov(String libellePov) {
+		this.libellePov = libellePov;
+	}
 	public String getLibellePerstation() {
 		return libellePerstation;
 	}
 	public void setLibellePerstation(String libellePerstation) {
 		this.libellePerstation = libellePerstation;
 	}
-	private Long id_pov;
 	public Long getId_suivi() {
 		return id_suivi;
 	}

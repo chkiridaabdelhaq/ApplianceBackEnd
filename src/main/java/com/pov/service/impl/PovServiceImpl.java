@@ -1,17 +1,18 @@
 package com.pov.service.impl;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import com.pov.dtos.PovDto;
 import com.pov.entities.Appliance;
 import com.pov.entities.Pov;
+import com.pov.entities.Suivi;
 import com.pov.mappers.PovMapper;
 import com.pov.repository.IPovRepository;
 import com.pov.service.interfaces.IPovService;

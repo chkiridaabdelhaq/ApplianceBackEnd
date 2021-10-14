@@ -27,6 +27,7 @@ public class SuiviMapper {
 		suiviDto.setCompteRendu(suivi.getCompteRendu());
 		if(suivi.getPov() != null) {
 			suiviDto.setId_pov(suivi.getPov().getId_pov());
+			suiviDto.setLibellePov(suivi.getPov().getLibellePov());
 		}
 		if(suivi.getTypePrestation() != null) {
 			suiviDto.setId_perstation(suivi.getTypePrestation().getId_perstation());
@@ -41,15 +42,15 @@ public class SuiviMapper {
 		suivi.setOfferCommercial(suiviDto.getOfferCommercial());
 		suivi.setCompteRendu(suiviDto.getCompteRendu());
 		suivi.setMontant(suiviDto.getMontant());
-		if(suiviDto.getId_pov() != null) {
-			PovDto povDto= new PovDto();
-			suiviDto.setId_pov(povDto.getId_pov());
-			suivi.setPov(povMapper.toDomain(new Pov(), povDto));
-		}
 		if(suiviDto.getId_perstation() != null) {
 			TypePrestation prestation= new TypePrestation();
 			prestation.setId_perstation(suiviDto.getId_perstation());
 			suivi.setTypePrestation(prestation);
+		}
+		if(suiviDto.getId_pov() !=null) {
+			Pov pov= new Pov();
+			pov.setId_pov(suiviDto.getId_pov());
+			suivi.setPov(pov);
 		}
 		return suivi;
 	}
